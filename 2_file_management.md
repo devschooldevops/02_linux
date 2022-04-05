@@ -58,14 +58,12 @@ System administrators can grant user access to files and directories, with appro
 | 6     | rw-      | read an write           |
 | 7     | rwx      | read, write and execute |
 
-```sudo rm -rf / ; don't try this at ~ ```
-
-### Access rights commands (demo)
+### Access rights commands
 - chown
 - chgrp
 - chmod
 
-### DIY Lab (15min)
+### Practice
 - create */opt/billing* directory
 - create */opt/billing/clients* and */opt/billing/invoices* files
 - configure *alice* user as owner for */opt/billing* directory and its contents
@@ -78,14 +76,12 @@ System administrators can grant user access to files and directories, with appro
 - add write permissions on */opt/billing/invoices* for *billing* group
 - make *john* as owner for */opt/billing/clients* and assign him read only rights
 
-### Solutions for DIY Lab
-
 ### Special permissions
 Linux offers three other types of permissions, called **special permission bits** that may be set on executable files or directories to allow them to respond differently for certain operations.
 
-- **setuid** bit: has effect only on files, provides non-owners the ability to run executables with the provileges of the owner
+- **setuid** bit: has effect only on files, provides non-owners the ability to run executables with the privileges of the owner
 - **setgit** bit: has effect on files and directories, used for group collaboration (alters the standard behavior so that the group of the files created inside the directory, will not be that of the user who created them, but that of the parent directory)
-- **sticky** bit: set on directories with effect on its files, all the files in directory will be modifiable only by their owners. A typical case is the */tmp* directory. Typically this directory is writable by all users on the system, but a user cannot delete files owned by other users
+- **sticky** bit: set on directories with effect on its files, all the files in directory will be modifiable only by their owners. A typical case is the */tmp* directory. Typically, this directory is writable by all users on the system, but a user cannot delete files owned by other users
 
 ### Default permissions
 Linux assigns default permissions to a file or directory at the time of its creation. Default permissions are calculated based on the **umask** (user mask) value subtracted from a preset value called *initial permissions* (777 for directories, 666 for files).

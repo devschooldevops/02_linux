@@ -20,7 +20,7 @@ Below is a simplified overview of the entire Linux boot and startup process:
 - introduced parallel processing of startup scripts
 - improved handling of service dependencies
 - it is backwards compatible with SysVinit scripts as described in the Linux Standard Base (LSB) specification
-- systemd is the first process that starts at boot and it is the last process that terminates at shutdown
+- systemd is the first process that starts at boot, and it is the last process that terminates at shutdown
 
 ### systemd Units
 systemd introduces the concept of **systemd units** and there are several types, such as a service unit, mount unit, socket unit and slice unit. Units are defined in unit configuration files, which include information about the unit type and its behavior.
@@ -56,12 +56,12 @@ systemd replaces traditional SysVinit **runlevels** with predefined groups of un
 Targets are usually defined according to the intended use of the system, and ensure that required dependencies for that use are met.
 The following table shows some standard preconfigured targets, the sysVinit runlevels they resemble and the use case they address.
 
-| Target     | Runlevel | Usage |
-| ---------- | -------- | ----- |
-| rescue     | 1        | single user mode, for recovery of critical system components or configuration |
-| multi-user | 2        | non-graphical multi-user console access, via local TTYs or network |
+| Target     | Runlevel | Usage                                                                                |
+| ---------- | -------- |--------------------------------------------------------------------------------------|
+| rescue     | 1        | single user mode, for recovery of critical system components or configuration        |
+| multi-user | 2        | non-graphical multi-user console access, via local TTYs or network                   |
 | graphical  | 5        | a GUI session. Typically provides the user with a fully featured desktop environment |
-| custom     | 4        | ystemd allows any number of custom defined targets |
+| custom     | 4        | systemd allows any number of custom defined targets                                  |
 
 
 ## systemd cheat sheet
@@ -74,11 +74,8 @@ systemctl enable|disable NAME       # enable|disable NAME service
 systemctl get-default               # get default target
 ```
 
-## DIY Lab (15min)
-- stop and disable firewalld
-- start httpd service and make sure the change is persistent across reboots
-
-## Solutions for DIY Lab
-
+## Practice
+- (Service) play with firewalld (Red Hat) or ufw (Debian), add a rule, make it persistent
+- (Service) start httpd (or nginx) service and make sure the change is persistent across reboots
 
 ```Linux is user-friendly, but it's just very selective about who its frieds are.```

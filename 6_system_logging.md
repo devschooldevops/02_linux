@@ -45,6 +45,10 @@ journalctl -u crond --since today
 
 last                  # show listing of last logged in users
 lastb                 # show listing of users logged in since the last boot
+
+less logfile          # go through the logfile
+
+grep pattern file     # search for pattern in file
 ```
 
 

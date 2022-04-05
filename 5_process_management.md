@@ -11,10 +11,10 @@
 
 ## Cheat sheet
 ```bash
-ps aux    # list all running procesess
-ps auxww  # list all running procesess in extra wide format
-          # usefull to display long commands that are trimmed by default
-ps auxf   # hierarchy list all running procesess
+ps aux    # list all running processes
+ps auxww  # list all running processes in extra wide format
+          # useful to display long commands that are trimmed by default
+ps auxf   # hierarchy list all running processes
 
 kill PID    # terminate process
 kill -9 PID # forcefully terminate process
@@ -23,13 +23,13 @@ pgrep -f "keyword"  # returns a list of PIDs that have "keyword" in command fiel
 pkill -f "keyword"  # terminates all PIDs that have "keyword" in command field
 
 command &        # run "command" and send it in background
-nohup command 2>&1 > cmd.log &
-                 # detach command from tty and run it in background
-                 # send stdout and sterr to the cmd.log file
+nohup command &  # detach command from tty and run it in background
 
-jobs             # display comands sent to run in background
+jobs             # display commands sent to run in background
 fg               # bring last command send to background in foreground
 bg               # resume commands paused with CTRL-Z
+
+top, htop        # alternatives for process info
 ```
 
 ```Thou shalt not kill -9```

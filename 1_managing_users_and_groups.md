@@ -23,7 +23,7 @@ user_name:x:UID:GID:comments:home_directory:shell
 - **shell**: user's default shell
 
 ## /etc/shadow
-This file stores the encryptes user' password along with other info
+This file stores the encrypted user' password along with other info
 
 ```plaintext
 user_name:encypted_passords:lastchg_days:min_days:max_days:warn_days:inactive_days:disabled_days:
@@ -54,6 +54,39 @@ group_name:x:GID:user_list
 - **GID**: group ID
 - **user_liet**: a comma delimited list of users assigned to the group. The user' primary group is defined in /etc/password
 
+## /etc/sudoers
+This file contains users and groups privileges. We use the visudo command to edit this file (visudo also validates sudoers file syntax)
+
+```bash
+your_user@your_machine:~$ sudo visudo
+```
+
+```bash
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+
+# Members of the admin group may gain root privileges
+%admin ALL=(ALL) ALL
+
+# Allow members of group sudo to execute any command
+%sudo   ALL=(ALL:ALL) ALL
+```
+The explanation for root is as follows:
+```bash
+root ALL=(ALL:ALL) ALL The first field indicates the username that the rule will apply to (root).
+root ALL=(ALL:ALL) ALL The first “ALL” indicates that this rule applies to all hosts.
+root ALL=(ALL:ALL) ALL Second “ALL” indicates that the root user can run commands as all users.
+root ALL=(ALL:ALL) ALL Third “ALL” indicates that the root user can run commands as all groups.
+root ALL=(ALL:ALL) ALL The last “ALL” indicates these rules apply to all commands.
+```
+
+Your user is in the sudo group and is allowed to execute all commands with sudo. You can check this with:
+```bash
+your_user@your_machine:~$ groups your_user
+```
+or in the above-mentioned /etc/groups file.
+
+
 ## Configuration files
 The files mentioned above contain only user and group information and attributes.
 There are additional files/directories that configure default values for various attributes.
@@ -62,7 +95,7 @@ There are additional files/directories that configure default values for various
 - /etc/login.defs
 - /etc/skel/
 
-## Common commands (demo)
+## Common commands
 - useradd
 - groupadd
 - passwd
@@ -70,10 +103,11 @@ There are additional files/directories that configure default values for various
 - chage
 - userdel
 - groupdel
+- visudo
 
 ```Passwords are like underwear. Change them often, don't share them, don't leave them out for others to see.```
 
-## DIY Lab (15min)
+## Practice
 - create a user named *alice* with UID and GID set to *3001*
 - create a user named *bob* with home directory in */opt*
 - create a user named *john* with comment field set to *John Doe*
@@ -88,8 +122,6 @@ There are additional files/directories that configure default values for various
 - add *alice* and *bob* to the *billing* group
 - configure password aging for *alice* with **chage** command:
   -  password validity 31 days
-  -  the user should receivewarnings 7 days before password expiration
+  -  the user should receive warnings 7 days before password expiration
 - lock *minecraft* account
-
-## Solutions for DIY Lab
-
+- create a user *king* and add him in the sudoers file, then test its privileges (run something with sudo)

@@ -11,7 +11,7 @@
     - a DAS device could be a single internal hard disk or or multiple external hard disks (JBOD)
     - there are no networking layers between computer and storage
     - protocols: **SATA**, **SCSI**, **SAS**
-    - for reduncy and/or performance disks can be clustered in **RAID**
+    - for redundancy and/or performance disks can be clustered in **RAID**
   - **SAN** (Storage Area Network):
     - an enterprise system that provides access to consolidated block-level data storage
     - devices exposed by SANs appear to the operating system as locally-attached devices
@@ -32,13 +32,13 @@
 
 
 ## Disks, partitions
-- **disks** are just a raw physical/virtual mean to store data, what lacks is organization
+- **disks** are just a raw physical/virtual mean to store data, what lacks in organization
 - that organization comes in the name of **partition**
 - a **partition** is a logical form of boundary, it is used to divide the disk in logical units
 - partitions store data, but where are partitions stored?
 - partitions are stored in what’s called a **partition table**
 - partition tables store the data associated with partitions, where a partition starts, where a partition, etc
-- however partitions are not enough to store data in an ordered manner
+- however, partitions are not enough to store data in an ordered manner
 - to do that we need a **file system**
 - a file system takes care of storing pieces of data - **files**
 - files themselves are just a bunch of data that are stored through the file system, which resides in a partition, which is recorded in a partition table, all of this, inside a disk
@@ -49,7 +49,7 @@
 - allows for the collection of multiple physical hard drives and partitions into a single volume group which can then be divided into logical volumes.
 - terminology:
   - **physical volumes**: physical disks, or disk partitions
-  - **volume groups**: seen as a *"virtual partition"* which is comprised of an arbitary number of physical volumes
+  - **volume groups**: seen as a *"virtual partition"* which comprises an arbitrary number of physical volumes
   - **logical volumes**: contained in the volume groups they can be bigger than any single physical volume you might have. These will be formatted with a file system
 
 
@@ -61,5 +61,5 @@
 
 ## Demo
 - add two virtual disks to the VM
-- create standard partion, format it, mount it, created a persistent mount
+- create standard partition, format it, mount it, created a persistent mount
 - create a LVM backed file system
