@@ -30,39 +30,20 @@ yum install package_name    # Install package
 yum erase package_name      # Remove package
 yum remove package_name     # Remove package
 yum autoremove              # Cleanup unused packages
+
+rpm -qf /usr/bin/htpasswd   # query the package to which this file belongs
+rpm -ql BitTorrent          # list all files of a package
+rpm -qa --last              # display latest installed packages
+rpm -qi vsftpd              # query info on a package
 ```
-
-## Useful apt commands
-```bash
-apt list                    # List installed and available packages from repositories
-apt list --installed        # List only installed packages
-
-apt search KEYWORD          # Search package details for the given string
-apt info KEYWORD            # Display details about a package or group of packages
-
-apt update                  # Check for updates
-apt upgrade                 # Perform updates
-apt-get install --only-upgrade package_name   # Update custom package
-
-apt install package_name    # Install package
-
-apt remove package_name     # Remove package
-apt purge package_name      # Remove package + config
-apt autoremove              # Cleanup unused packages
-```
-
-More commands [here](https://www.baeldung.com/linux/yum-and-apt).
 
 ## Practice
 - search the package containing the Epel repository configuration file and install it
 - install Apache web server
 - find packages containing a file named nptd
-- install the package **sl** from the official download site (add apt or rpm to your search query) and execute the **sl** command
+- install the package **sl** and run it
 - find which package owns the */etc/centos-release* file
 - find what other files were installed by the above packet
 
-## Solutions for DIY Lab
-
 
 ```Planning is for those who don't know how to troubleshoot.```
-

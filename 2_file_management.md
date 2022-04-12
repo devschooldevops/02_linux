@@ -63,19 +63,6 @@ System administrators can grant user access to files and directories, with appro
 - chgrp
 - chmod
 
-### Practice
-- create */opt/billing* directory
-- create */opt/billing/clients* and */opt/billing/invoices* files
-- configure *alice* user as owner for */opt/billing* directory and its contents
-- configure *billing* group as owner for */opt/billing* directory and its contents
-- configure access rights for */opt/billing* directory
-  - read, write and execute for *alice* user
-  - read and execute for *billing* group
-  - read and execute for everyone else
-- remove access rights others for all files in */opt/billing* directory
-- add write permissions on */opt/billing/invoices* for *billing* group
-- make *john* as owner for */opt/billing/clients* and assign him read only rights
-
 ### Special permissions
 Linux offers three other types of permissions, called **special permission bits** that may be set on executable files or directories to allow them to respond differently for certain operations.
 
@@ -111,6 +98,31 @@ A **hard link** associates one or more files with a single inode number, making 
 
 ## Useful commands
 ```bash
+chmod u=x file          # set only execute rights to file for the user (owner)
+chmod og= file          # set no rights for group and others on file
+chmod g+x file          # add execute rights for the group
+chmod g-x file          # remove execute rights for group
+chmod u+rw,og= file     # add read and write rights for user, remove every right for group and others
+
+chmod 777 file          # add all rights to everyone for file
+chmod 400 file          # add only read rights to user
+
+chmod --reference=file1 file2 # permissions of file1 will be copied to file2
+
+chmod -R 744 /tmp/tmp_dir # set 744 to all files and directories recursively
+
+chown user file         # set user as the owner of file
+
+sudo chgrp -R group /path/to/directory # group will now be the owner of directory and everything in it
+
+stat file               # display file details
+stat -c "%a" file       # check permissions for file 
+
+ln -s source_file_path symbolic_link_source_file_path
+# ln -s /usr/bin /bin
+
+ln source_file_path hard_link_source_file_path
+
 df -h         # shows information about file system disk usage
 
 du -h /var    # shows information about directory and file sizes on disk
@@ -130,5 +142,8 @@ find / -group billing
 find / -type f -size +10M -exec ls -lh {} \;
               # find files larger than 10MB and list them in long format
 ```
+
+### Practice
+Play around with chmod, change permissions for a file, create a symlink to it, display some info on it.
 
 ```To err is human ... to really f*ck up requires the root password.```

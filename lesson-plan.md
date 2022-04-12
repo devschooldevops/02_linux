@@ -18,16 +18,14 @@ At the end of the lesson the student should
 - be able to do basic file processing (grep, tail etc.)
 
 ## Resources required/used
-- Access to a Linux machine
+- Access to a Linux Red Hat machine
 
 ## Prerequisites
-- have a Linux machine setup (Azure VM, Local VM, Local OS)
+- have a Red Hat machine setup (Azure VM, Local VM, Local OS)
 - be curious :))
 
 ## Agenda
-Example:
-- introduction
-- will go through each section
+agenda.md
 
 ## Feedback from students
 (generic survey will be setup)

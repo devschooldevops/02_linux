@@ -11,10 +11,10 @@
 
 ## Cheat sheet
 ```bash
-ps aux    # list all running processes
-ps auxww  # list all running processes in extra wide format
+ps aux    # list all processes
+ps auxww  # list all processes in extra wide format
           # useful to display long commands that are trimmed by default
-ps auxf   # hierarchy list all running processes
+ps auxf   # hierarchy list all processes
 
 kill PID    # terminate process
 kill -9 PID # forcefully terminate process

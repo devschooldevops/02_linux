@@ -75,7 +75,5 @@ systemctl get-default               # get default target
 ```
 
 ## Practice
-- (Service) play with firewalld (Red Hat) or ufw (Debian), add a rule, make it persistent
-- (Service) start httpd (or nginx) service and make sure the change is persistent across reboots
-
+- (Service) disable with firewalld, make it persistent
 ```Linux is user-friendly, but it's just very selective about who its frieds are.```

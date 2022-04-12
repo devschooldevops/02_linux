@@ -108,20 +108,10 @@ There are additional files/directories that configure default values for various
 ```Passwords are like underwear. Change them often, don't share them, don't leave them out for others to see.```
 
 ## Practice
-- create a user named *alice* with UID and GID set to *3001*
-- create a user named *bob* with home directory in */opt*
-- create a user named *john* with comment field set to *John Doe*
-- create a user named *minecraft* with:
-  - UID *9990*
-  - GID *9990*
-  - home directory in */usr/games*
-  - do not create the home directory
-  - no login privileges
-- set a password for alice
-- create a group named *bilinq* with GID 9001
-- add *alice* and *bob* to the *billing* group
-- configure password aging for *alice* with **chage** command:
-  -  password validity 31 days
-  -  the user should receive warnings 7 days before password expiration
-- lock *minecraft* account
-- create a user *king* and add him in the sudoers file, then test its privileges (run something with sudo)
+- create a user named *alice*
+- create a user named *bob*
+- create a user named *john*
+- create a group named *friends*
+- add *alice* and *bob* to the *friends* group
+- delete user *john*
+- create a user *king* and add him in the sudoers file with root privileges, then test them(run something with sudo)
