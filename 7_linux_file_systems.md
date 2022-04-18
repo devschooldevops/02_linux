@@ -32,12 +32,12 @@
 
 
 ## Disks, partitions
-- **disks** are just a raw physical/virtual mean to store data, what lacks in organization
+- **disks** are just a raw physical/virtual mean to store data, they lack organization
 - that organization comes in the name of **partition**
 - a **partition** is a logical form of boundary, it is used to divide the disk in logical units
 - partitions store data, but where are partitions stored?
 - partitions are stored in what’s called a **partition table**
-- partition tables store the data associated with partitions, where a partition starts, where a partition, etc
+- partition tables store the data associated with partitions, where a partition starts, where a partition ends, etc
 - however, partitions are not enough to store data in an ordered manner
 - to do that we need a **file system**
 - a file system takes care of storing pieces of data - **files**

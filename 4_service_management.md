@@ -43,13 +43,13 @@ systemd introduces the concept of **systemd units** and there are several types,
 
 The following table briefly explains the terms that the systemd uses to describe the status of units.
 
-| Status         | Description |
-| -------------- | ----------- |
-| loaded         | The unit's configuration file has been successfully read and processed |
-| active exited  | Successfully executed the one-time configuration and after execution, the unit is neither running an active process nor waiting for an event |
-| active running | Successfully executed the one-time configuration and after execution, the unit is running one or more active processes |
-| active waiting | Successfully executed the one-time configuration and after execution, the unit is waiting for an event |
-| inactive dead  | Either the one-time configuration failed to execute or not executed yet |
+| Status          | Description                                                                                                                                  |
+|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| loaded          | The unit's configuration file has been successfully read and processed                                                                       |
+| active exited   | Successfully executed the one-time configuration and after execution, the unit is neither running an active process nor waiting for an event |
+| active running  | Successfully executed the one-time configuration and after execution, the unit is running one or more active processes                       |
+| active waiting  | Successfully executed the one-time configuration and after execution, the unit is waiting for an event                                       |
+| inactive dead   | Either the one-time configuration failed to execute or not executed yet                                                                      |
 
 ### systemd targets
 systemd replaces traditional SysVinit **runlevels** with predefined groups of units called **targets**.
@@ -57,7 +57,7 @@ Targets are usually defined according to the intended use of the system, and ens
 The following table shows some standard preconfigured targets, the sysVinit runlevels they resemble and the use case they address.
 
 | Target     | Runlevel | Usage                                                                                |
-| ---------- | -------- |--------------------------------------------------------------------------------------|
+|------------|----------|--------------------------------------------------------------------------------------|
 | rescue     | 1        | single user mode, for recovery of critical system components or configuration        |
 | multi-user | 2        | non-graphical multi-user console access, via local TTYs or network                   |
 | graphical  | 5        | a GUI session. Typically provides the user with a fully featured desktop environment |

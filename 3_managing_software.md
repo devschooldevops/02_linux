@@ -43,7 +43,7 @@ rpm -qi vsftpd              # query info on a package
 - find packages containing a file named nptd
 - install the package **sl** and run it
 - find which package owns the */etc/centos-release* file
-- find what other files were installed by the above packet
+- find what other files were installed by the above package
 
 
 ```Planning is for those who don't know how to troubleshoot.```

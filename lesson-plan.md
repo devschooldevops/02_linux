@@ -15,7 +15,7 @@ At the end of the lesson the student should
 - know what are file permissions (ownership) and why are they important
 - understand on a basic level the Linux file system
 - know what a process is
-- be able to do basic file processing (grep, tail etc.)
+- learn about logs
 
 ## Resources required/used
 - Access to a Linux Red Hat machine
@@ -25,7 +25,13 @@ At the end of the lesson the student should
 - be curious :))
 
 ## Agenda
-agenda.md
+- 30 min: intro + users
+- 30 min: file management
+- 15 min: yum + rpm
+- 15 min: services
+- 15 min: processes
+- 15 min: logging
+- 30 min: linux file systems
 
 ## Feedback from students
 (generic survey will be setup)
