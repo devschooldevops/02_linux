@@ -31,10 +31,10 @@ yum erase package_name      # Remove package
 yum remove package_name     # Remove package
 yum autoremove              # Cleanup unused packages
 
-rpm -qf /usr/bin/htpasswd   # query the package to which this file belongs
-rpm -ql BitTorrent          # list all files of a package
+rpm -qf /usr/bin/ls         # query the package to which this file belongs
+rpm -ql git                 # list all files of a package
 rpm -qa --last              # display latest installed packages
-rpm -qi vsftpd              # query info on a package
+rpm -qi git                 # query info on a package
 ```
 
 ## Practice

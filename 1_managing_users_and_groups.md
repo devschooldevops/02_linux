@@ -52,13 +52,13 @@ group_name:x:GID:user_list
 - **group_name**: a unique group name
 - **x**: password placeholder. Usually group passwords are not used. It may contain an encrypted password
 - **GID**: group ID
-- **user_liet**: a comma delimited list of users assigned to the group. The user' primary group is defined in /etc/password
+- **user_list**: a comma delimited list of users assigned to the group. The user' primary group is defined in /etc/password
 
 ## /etc/sudoers
 This file contains users and groups privileges. We use the visudo command to edit this file (visudo also validates sudoers file syntax)
 
 ```bash
-your_user@your_machine:~$ sudo visudo
+[your_user@your_machine ~]$ sudo visudo
 ```
 
 ```bash
@@ -82,7 +82,7 @@ root ALL=(ALL:ALL) ALL The last “ALL” indicates these rules apply to all com
 
 Your user is in the sudo group and is allowed to execute all commands with sudo. You can check this with:
 ```bash
-your_user@your_machine:~$ groups your_user
+[your_user@your_machine ~]$ groups your_user
 ```
 or in the above-mentioned /etc/groups file.
 
@@ -96,14 +96,45 @@ There are additional files/directories that configure default values for various
 - /etc/skel/
 
 ## Common commands
+- whoami
+- id
 - useradd
 - groupadd
+- su
 - passwd
 - usermod
 - chage
 - userdel
 - groupdel
 - visudo
+
+```bash
+sudo useradd new_user
+
+sudo groupadd new_group
+
+sudo passwd new_user
+
+# login as new_user
+su new_user
+# login as root
+su # no args means root
+
+# usermod examples:
+# add user to group
+sudo usermod -a -G new_group new_user
+# change the primary group
+sudo usermod -g new_group new_user
+
+id new_user
+
+# change home dir
+usermod -d new_home_dir new_user
+
+sudo userdel new_user
+
+sudo groupdel new_group
+```
 
 ```Passwords are like underwear. Change them often, don't share them, don't leave them out for others to see.```
 
@@ -113,5 +144,5 @@ There are additional files/directories that configure default values for various
 - create a user named *john*
 - create a group named *friends*
 - add *alice* and *bob* to the *friends* group
-- delete user *john*
-- create a user *king* and add him in the sudoers file with root privileges, then test them(run something with sudo)
+- delete user *john* with his home dir
+- create a user *king* and add him in the sudoers file with root privileges, then test them (run something with sudo)

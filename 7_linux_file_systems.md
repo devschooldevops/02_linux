@@ -59,7 +59,130 @@
 - common file system types: ext3, **ext4**, **xfs**, fat, ntfs; nfs, smbfs/cifs
 
 
-## Demo
+## Exercises
 - add two virtual disks to the VM
 - create standard partition, format it, mount it, created a persistent mount
+```bash
+# step 1: create partition on new disk
+
+# with sudo or as root
+parted
+
+# check what we have (hopefully extra disks apart from sda)
+(parted) print devices
+
+(parted) select /dev/sXY
+
+# create partition table for disk
+(parted) mklable gpt
+
+(parted) print # no partitions now
+
+(parted) mkpart primary 0% 15%   # raw partition
+
+(parted) quit
+```
+```bash
+# step 2: format
+mkfs -t ext4 /dev/sXY
+```
+```bash
+# step 3: mounting
+mkdir -p /mnt/sXY
+
+mount -t auto /dev/sXY /mnt/sXY
+
+df -hT  # the new device should show up as mounted and formatted
+# at this point it is ready to use, we can go to /mnt/sXY and use it
+```
+```bash
+# step 4: automount
+# find out uuid
+lsblk -o UUID,NAME
+
+# add new entry in /etc/fstab, use above uuid
+vim /etc/fstab
+
+# restart and test
+```
 - create a LVM backed file system
+```bash
+# step 1: create partition on new disk
+
+# with sudo or as root
+fdisk /dev/sXY
+
+# create empty partition table
+o
+
+# create full disk partition
+n  # with defaults
+
+# make LVM partition
+t # then input hex code 8e, you can also check all the codes with L
+
+# persist changes
+w
+```
+```bash
+# step 2: create PVs, VGs and LVs
+# add physical volume (PV) to LVM
+pvcreate /dev/sXY
+
+# check
+pvscan
+pvs
+pvdisplay /dev/sXY
+
+# create volume group (VG)
+vgcreate ops /dev/sXY
+
+# extend VG
+vgextend ops /dev/sXZ
+
+# check
+vgscan
+vgs
+vgdisplay ops
+
+# create logical volumes (LV)
+lvcreate --size 400M --name first ops
+lvcreate --size 400M --name second ops
+lvcreate --size 400M --name third ops
+
+# check
+lvscan
+lvs
+lvdisplay ops/first
+lvdisplay ops/second
+lvdisplay ops/third
+```
+```bash
+# step 3: format
+mkfs -t ext4 /dev/ops/first
+mkfs -t ext4 /dev/ops/second
+mkfs -t ext4 /dev/ops/third
+```
+```bash
+# step 4: mounting
+mkdir -p /mnt/first
+mkdir -p /mnt/second
+mkdir -p /mnt/third
+
+mount -t auto /dev/ops/first /mnt/first
+mount -t auto /dev/ops/second /mnt/second
+mount -t auto /dev/ops/third /mnt/third
+
+df -hT  # the new device should show up as mounted and formatted
+# at this point it is ready to use, we can go to /mnt/* and use it
+```
+```bash
+# step 5: automount
+# find out uuid
+lsblk -o UUID,NAME
+
+# add new entry in /etc/fstab, use above uuid
+vim /etc/fstab
+
+# restart and test
+```

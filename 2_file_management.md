@@ -95,7 +95,6 @@ A **soft link** (a.k.a. a symbolic link or a symlink) associates one file with a
 
 A **hard link** associates one or more files with a single inode number, making all files indistinguishable from one another. This implies that the files will have identical permissions, ownership, time stamp, and file contents. Changes made to any of the files will be reflected in the other linked files as well.
 
-
 ## Useful commands
 ```bash
 chmod u=x file          # set only execute rights to file for the user (owner)
@@ -113,7 +112,7 @@ chmod -R 744 /tmp/tmp_dir # set 744 to all files and directories recursively
 
 chown user file         # set user as the owner of file
 
-sudo chgrp -R group /path/to/directory # group will now be the owner of directory and everything in it
+chgrp -R group /path/to/directory # group will now be the owner of directory and everything in it
 
 stat file               # display file details
 stat -c "%a" file       # check permissions for file 

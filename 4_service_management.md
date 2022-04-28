@@ -25,20 +25,20 @@ Below is a simplified overview of the entire Linux boot and startup process:
 ### systemd Units
 systemd introduces the concept of **systemd units** and there are several types, such as a service unit, mount unit, socket unit and slice unit. Units are defined in unit configuration files, which include information about the unit type and its behavior.
 
-| Unit type  | Description |
-| -----------| ----------- |
-| Target     | A group of units that defines a synchronization point which is used at boot time to start the system in a particular state |
-| Service    | A unit of this type starts, stops, restarts or reloads a service daemon such as Apache webserver |
-| Socket     | A unit of this type activates a service when the service receives incoming traffic on a listening socket |
-| Device     | A unit of this type implements device-based activation such as a device driver |
-| Mount      | A unit of this type controls the file-system mount point |
-| Automount  | A unit of this type provides and controls on-demand mounting of file systems |
-| Swap       | A unit of this type encapsulates/activates/deactivates swap partition |
-| Path       | A unit of this type monitors files/directories and activates/deactivates a service if the specified file or directory is accessed |
-| Timer      | A unit of this type activates/deactivates specified service based on a timer or when the set time is elapsed |
-| Snapshot   | A unit that creates and saves the current state of all running units. This state can be used to restore the system later |
-| Slice      | A group of units that manages system resources such as CPU, and memory |
-| Scope      | A unit that organizes and manages foreign processes |
+| Unit type   | Description                                                                                                                       |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| Target      | A group of units that defines a synchronization point which is used at boot time to start the system in a particular state        |
+| Service     | A unit of this type starts, stops, restarts or reloads a service daemon such as Apache webserver                                  |
+| Socket      | A unit of this type activates a service when the service receives incoming traffic on a listening socket                          |
+| Device      | A unit of this type implements device-based activation such as a device driver                                                    |
+| Mount       | A unit of this type controls the file-system mount point                                                                          |
+| Automount   | A unit of this type provides and controls on-demand mounting of file systems                                                      |
+| Swap        | A unit of this type encapsulates/activates/deactivates swap partition                                                             |
+| Path        | A unit of this type monitors files/directories and activates/deactivates a service if the specified file or directory is accessed |
+| Timer       | A unit of this type activates/deactivates specified service based on a timer or when the set time is elapsed                      |
+| Snapshot    | A unit that creates and saves the current state of all running units. This state can be used to restore the system later          |
+| Slice       | A group of units that manages system resources such as CPU, and memory                                                            |
+| Scope       | A unit that organizes and manages foreign processes                                                                               |
 
 
 The following table briefly explains the terms that the systemd uses to describe the status of units.
