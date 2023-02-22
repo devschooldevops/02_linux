@@ -6,7 +6,7 @@
 
 **Primary teacher**: Mircea
 
-**Secondary teacher**: Adrian, Maria, Iustin
+**Secondary teacher**: Liviu
 
 ## Goal
 At the end of the lesson the student should 
@@ -34,8 +34,6 @@ At the end of the lesson the student should
 - 30 min: linux file systems
 
 ## Feedback from students
-(generic survey will be setup)
 
-## Feedback from teachers:
-(generic survey will be setup)
+## Feedback from teachers
 

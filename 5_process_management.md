@@ -1,4 +1,5 @@
 # 5. Process management
+![Process Statem](images/processes.png)
 - a process is a unit for provisioning system resources
 - it is any program, application, or command that runs on the system
 - is created in memory in its own address space when a program, application, or command is initiated
@@ -31,5 +32,8 @@ bg               # resume commands paused with CTRL-Z
 
 top, htop        # alternatives for process info
 ```
+
+## Practice
+Start top in background, find its pid and kill it.
 
 ```Thou shalt not kill -9```

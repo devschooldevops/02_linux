@@ -75,5 +75,7 @@ systemctl get-default               # get default target
 ```
 
 ## Practice
-- (Service) disable with firewalld, make it persistent
+- Disable firewalld.service, show info on it.
+- (Optional) Install and start apache server, show some info.
+
 ```Linux is user-friendly, but it's just very selective about who its frieds are.```

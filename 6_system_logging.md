@@ -14,7 +14,7 @@ This directory contains logs from the OS itself, services, and various applicati
 
 Some of the most important Linux system logs include:
 - **/var/log/messages** stores all global system activity data, including startup messages
-- **/var/log/secure** storeS all security-related events such as logins, root user actions, and output from pluggable authentication modules (PAM)
+- **/var/log/secure** stores all security-related events such as logins, root user actions, and output from pluggable authentication modules (PAM)
 - **/var/log/cron** stores information about scheduled tasks (cron jobs)
 - **/var/log/maillog** contains information about emails relayed by the loca mail server
 
@@ -51,5 +51,8 @@ less logfile          # go through the logfile
 grep pattern file     # search for pattern in file
 ```
 
+## Practice
+Search in /var/log/secure for activity from your user.<br/>
+Use multiple methods.
 
 ```The only problem with troubleshooting is that sometimes trouble shoots back.```

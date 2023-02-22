@@ -59,8 +59,8 @@
 - common file system types: ext3, **ext4**, **xfs**, fat, ntfs; nfs, smbfs/cifs
 
 
-## Exercises
-- add two virtual disks to the VM
+## Exercise 1
+- add one virtual disk to the VM
 - create standard partition, format it, mount it, created a persistent mount
 ```bash
 # step 1: create partition on new disk
@@ -105,7 +105,10 @@ vim /etc/fstab
 
 # restart and test
 ```
-- create a LVM backed file system
+
+## Exercise 2
+- add two virtual disks to the VM
+- create a LVM backed file system that spans both disks
 ```bash
 # step 1: create partition on new disk
 

@@ -38,9 +38,10 @@ rpm -qi git                 # query info on a package
 ```
 
 ## Practice
+#### Disclaimer: this might not work on the ING network
 - search the package containing the Epel repository configuration file and install it
 - install Apache web server
-- find packages containing a file named nptd
+- find files belonging to package ntp
 - install the package **sl** and run it
 - find which package owns the */etc/centos-release* file
 - find what other files were installed by the above package

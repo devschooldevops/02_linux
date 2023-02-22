@@ -70,6 +70,9 @@ root    ALL=(ALL:ALL) ALL
 
 # Allow members of group sudo to execute any command
 %sudo   ALL=(ALL:ALL) ALL
+
+# Or allow members of group wheel to execute any command
+%wheel   ALL=(ALL:ALL) ALL
 ```
 The explanation for root is as follows:
 ```bash

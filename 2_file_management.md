@@ -76,8 +76,8 @@ Linux assigns default permissions to a file or directory at the time of its crea
 |                     | Directory | Files |
 | ------------------- | --------- | ----- |
 | initial permissions |   777 -   | 666 - |
-| umask               |   022     | 022   |
-| default permissions |   775     | 644   |
+| umask               |   002     | 002   |
+| default permissions |   775     | 664   |
 
 ### Control attributes
 There are certain **attributes** that may be set on a file or directory in order to control what can or cannot be done to it. For example, you can enable attributes on a file or directory so that no users, including root, can delete, modify, rename, or compress it.
@@ -143,6 +143,13 @@ find / -type f -size +10M -exec ls -lh {} \;
 ```
 
 ### Practice
-Play around with chmod, change permissions for a file, create a symlink to it, display some info on it.
+- create a file under your user. (644 <=> rw-r--r--)
+- test write permissions with other users not from the same group as the owner (it should not work)
+- change permissions to (? <=> rwxrw-r--)
+- test again with someone from the same group.
+
+- create two links on the file (hard and soft), print differences.
+
+- find all files with .so extension.
 
 ```To err is human ... to really f*ck up requires the root password.```
