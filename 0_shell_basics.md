@@ -1,6 +1,6 @@
 # Shell basics
 
-```bash
+``` bash
 touch file              # create empty file
 mkdir dir               # create empty dir
 
@@ -17,6 +17,7 @@ cd dir                  # navigate inside dir
 cd ..                   # go back (up)
 cd                      # go home :)
 cd ~                    # same as above, go to current user home dir
+cd $HOME                # go to current user home dir
 
 cp file1 file2          # copies file1 to file2
 mv file1 file2          # moves (renames) file1 to file2
