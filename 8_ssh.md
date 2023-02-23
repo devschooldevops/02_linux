@@ -3,6 +3,11 @@
 ssh is a service for logging into a remote machine and for executing commands on a remote machine.  It is intended to provide secure encrypted communications between two untrusted hosts over an insecure network.
 
 ```bash
+# check if sshd is running
+systemctl status sshd
+```
+
+```bash
 [local_user@local_host ~]$ ssh remote_user@remote_host
 # input password
 
@@ -24,35 +29,3 @@ ssh is a service for logging into a remote machine and for executing commands on
 # we can also copy dirs from remote to local
 [local_user@local_host ~]$ scp -r remote_user@remote_host:/path/to/dir /home/local_user/dir
 ```
-
-## Archives
-### tar
-```bash
-# create archive with files or/and dirs
-# c -> create , z -> compress with gzip, v -> verbose, f -> name of archive
-tar -czvf archive_name.tar.gz  file1 file2
-
-# peek inside archive
-tar -tf archive_name.tar.gz
-
-# extract contents
-# x -> extract
-tar -xvf archive_name.tar.gz -C /path/to/dir
-```
-### zip
-```bash
-# create archive with files or/and dirs
-zip  archive_name.zip  file1 file2
-
-# peek inside archive
-unzip -l archive_name.zip
-
-# extract contents
-unzip archive_name.zip -d /path/to/dir
-```
-
-
-## crontab
-
-For recurrent tasks, linux provides a daemon that can run scripts based on a fixed schedule defined with ```crontab -e```.
-You will find the syntax in the opened file.

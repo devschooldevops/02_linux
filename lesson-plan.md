@@ -18,10 +18,11 @@ At the end of the lesson the student should
 - learn about logs
 
 ## Resources required/used
-- Access to a Linux Red Hat machine
+- Red Hat Linux (CentOS 7 DVD)
 
 ## Prerequisites
 - have a Red Hat machine setup (Azure VM, Local VM, Local OS)
+- do some updates, check 3_managing_software.md
 - be curious :))
 
 ## Agenda
@@ -31,7 +32,10 @@ At the end of the lesson the student should
 - 15 min: services
 - 15 min: processes
 - 15 min: logging
-- 30 min: linux file systems
+- (might move this) 30 min: linux file systems
+- 10 min: ssh
+- 10 min: archives
+- 10 min: other
 
 ## Feedback from students
 

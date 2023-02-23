@@ -75,6 +75,7 @@ systemctl get-default               # get default target
 ```
 
 ## Practice
+- Show some info in sshd.
 - Disable firewalld.service, show info on it.
 - (Optional) Install and start apache server, show some info.
 

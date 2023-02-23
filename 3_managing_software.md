@@ -38,7 +38,7 @@ rpm -qi git                 # query info on a package
 ```
 
 ## Practice
-#### Disclaimer: this might not work on the ING network
+#### Disclaimer: this will not work on the ING network.
 - search the package containing the Epel repository configuration file and install it
 - install Apache web server
 - find files belonging to package ntp

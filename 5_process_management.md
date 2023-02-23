@@ -17,8 +17,9 @@ ps auxww  # list all processes in extra wide format
           # useful to display long commands that are trimmed by default
 ps auxf   # hierarchy list all processes
 
+kill -l     # show all signals
 kill PID    # terminate process
-kill -9 PID # forcefully terminate process
+kill -9 PID # forcefully terminate process, send SIGKILL
 
 pgrep -f "keyword"  # returns a list of PIDs that have "keyword" in command field
 pkill -f "keyword"  # terminates all PIDs that have "keyword" in command field

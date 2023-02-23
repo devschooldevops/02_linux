@@ -17,6 +17,7 @@ Some of the most important Linux system logs include:
 - **/var/log/secure** stores all security-related events such as logins, root user actions, and output from pluggable authentication modules (PAM)
 - **/var/log/cron** stores information about scheduled tasks (cron jobs)
 - **/var/log/maillog** contains information about emails relayed by the loca mail server
+- **/var/log/yum** yum logs
 
 ## Log file rotation
 With the amount of logging that is possible, you need to be able to control the size of log files.
@@ -52,7 +53,7 @@ grep pattern file     # search for pattern in file
 ```
 
 ## Practice
-Search in /var/log/secure for activity from your user.<br/>
-Use multiple methods.
+- Search in /var/log/secure for activity from your user.
+- Search in yum logs, see recent updates/installs.
 
 ```The only problem with troubleshooting is that sometimes trouble shoots back.```
