@@ -12,10 +12,12 @@
 At the end of the lesson the student should 
 - have a basic understanding of the advantages of Linux, how it works
 - be able to run basic Linux commands and know when to run them
-- know what are file permissions (ownership) and why are they important
-- understand on a basic level the Linux file system
+- understand the file perimissions
+- understand the Linux file system
 - know what a process is
 - learn about logs
+- learn about package managers
+- learn about more complex concepts
 
 ## Resources required/used
 - Red Hat Linux (CentOS 7 DVD)
