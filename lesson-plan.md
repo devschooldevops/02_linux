@@ -2,19 +2,22 @@
 
 ## General information
 
-**Duration**: 3 hours (max 1 hour theory)
+**Duration**: 3 hours (1h theory, 2h practic)
 
-**Primary teacher**: <>
+**Primary teacher**: 
 
-**Secondary teacher**: <>
+**Secondary teacher**: 
 
 ## Goal
-At the end of the lesson the student should 
+At the end of the lesson the student should:
 - have a basic understanding of the advantages of Linux, how it works
 - be able to run basic Linux commands and know when to run them
-- understand on a basic level the Linux file system
-- know what are file permissions (ownership) and why are they important
-- know what is a process
+- understand the file perimissions
+- understand the Linux file system
+- know what a process is
+- learn about logs
+- learn about package managers
+- learn about more complex concepts
 - be able to do basic file processing (grep, tail etc.)
 
 ## Resources required/used
@@ -37,4 +40,5 @@ Example:
 
 ## Feedback from teachers:
 (generic survey will be setup)
+
 
