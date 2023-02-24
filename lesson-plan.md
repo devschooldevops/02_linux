@@ -9,7 +9,7 @@
 **Secondary teacher**: Liviu
 
 ## Goal
-At the end of the lesson the student should 
+At the end of the lesson the student should:
 - have a basic understanding of the advantages of Linux, how it works
 - be able to run basic Linux commands and know when to run them
 - understand the file perimissions
@@ -18,6 +18,7 @@ At the end of the lesson the student should
 - learn about logs
 - learn about package managers
 - learn about more complex concepts
+- be able to do basic file processing (grep, tail etc.)
 
 ## Resources required/used
 - Red Hat Linux (CentOS 7 DVD)
