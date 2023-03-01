@@ -55,5 +55,6 @@ grep pattern file     # search for pattern in file
 ## Practice
 - Search in /var/log/secure for activity from your user.
 - Search in yum logs, see recent updates/installs.
+- (Optional) Search for the java daemon logs.
 
 ```The only problem with troubleshooting is that sometimes trouble shoots back.```

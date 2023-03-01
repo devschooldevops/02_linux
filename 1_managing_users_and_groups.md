@@ -55,7 +55,7 @@ group_name:x:GID:user_list
 - **user_list**: a comma delimited list of users assigned to the group. The user' primary group is defined in /etc/password
 
 ## /etc/sudoers
-This file contains users and groups privileges. We use the visudo command to edit this file (visudo also validates sudoers file syntax)
+This file contains users and groups privileges. We use the **visudo** command to edit this file (visudo also validates sudoers file syntax)
 
 ```bash
 [your_user@your_machine ~]$ sudo visudo
@@ -120,8 +120,8 @@ sudo passwd new_user
 
 # login as new_user
 su new_user
-# login as root
-su # no args means root
+
+su # no args means login as root
 
 # usermod examples:
 # add user to group

@@ -25,10 +25,13 @@ At the end of the lesson the student should:
 - mostly based on: https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i?section=outline
 - it will help if you also go through: https://www.tutorialspoint.com/unix/index.htm or some other tutorial
 
+
 ## Prerequisites
 - have a Red Hat machine setup (Azure VM, Local VM, Local OS)
-- do some updates, check 3_managing_software.md
+- do some updates, check managing_software chapter
 - maybe have some ssh client on your local machine to connect to the vm in the ssh chapter (WSL, Putty, some other)
+- please have jre installed: check with **java -version**
+- use this when vim is giving you headaches https://www.tutorialspoint.com/vim/index.htm
 - be curious :))
 
 ## Agenda

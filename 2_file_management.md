@@ -147,7 +147,7 @@ find / -type f -size +10M -exec ls -lh {} \;
 ```
 
 ### Practice
-- create a file under your user. (664 <=> rw-rw-r--)
+- create a file under your user in /tmp. (664 <=> rw-rw-r--)
 - test write permissions with other users not from the same group as the owner (it should not work)
 - change permissions to (? <=> rwxrw-r--)
 - test again with someone from the same group.

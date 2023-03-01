@@ -25,4 +25,4 @@ unzip archive_name.zip -d /path/to/dir
 ```
 
 ### Practice:
-- archive and compress some random 1MB file. Show the size difference.
+- archive and compress some random file (maybe the jar file). Show the size difference.

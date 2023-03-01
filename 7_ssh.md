@@ -8,6 +8,7 @@ systemctl status sshd
 ```
 
 ```bash
+# remote_host can also be remote_ip
 [local_user@local_host ~]$ ssh remote_user@remote_host
 # input password
 
@@ -21,7 +22,7 @@ systemctl status sshd
 # you can also run individual commands on remote host
 [local_user@local_host ~]$ ssh remote_user@remote_host 'command'
 # example
-[local_user@local_host ~]$ ssh remote_user@remote_host rmdir /home/username_on_remote_machine/empty_dir
+[local_user@local_host ~]$ ssh remote_user@remote_host rmdir /home/remote_user/empty_dir
 
 
 # we can copy files from local to remote

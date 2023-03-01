@@ -63,22 +63,33 @@ The following table shows some standard preconfigured targets, the sysVinit runl
 | graphical  | 5        | a GUI session. Typically provides the user with a fully featured desktop environment |
 | custom     | 4        | systemd allows any number of custom defined targets                                  |
 
+### daemons/services
+A daemon is a kind of process in Linux that executes in the background unobtrusively, instead of upon the direct access of a user. It waits to be triggered by the appearance of a particular condition or event.
+
+Typically, UNIX-like systems execute numerous daemons, primarily for accommodating requests for services through other systems on the network, to hardware activity, and for responding to other programs as well.
+
+Examples of conditions or actions that could activate daemons into the activity can be a particular date or time, passage of a described time interval, receipt of a web request or email created from a specific communication line, and a file landing in a specific directory.
+
+We cand find some daemons in **/etc/systemd/system**
 
 ## systemd cheat sheet
 ```bash
+# everything with sudo
+systemctl daemon-reload             # we run this when a unit file is changed
 systemctl list-units --type=service # list all loaded service units
 systemctl status NAME               # check status for NAME service unit
 systemctl is-enabled NAME           # check if NAME service is enabled
 systemctl start|stop|restart NAME   # start|stop|restart NAME service
-systemctl enable|disable NAME       # enable|disable NAME service
+systemctl enable|disable NAME       # enable|disable NAME service (autostart)
 systemctl get-default               # get default target
 ```
 
 ## Practice
-- Show some info in sshd.
+- Show some info on sshd.
 - Disable firewalld.service, show info on it.
-- Make the jar in the project a daemon. Open your browser on http://localhost:8080
 - (Optional) Install and start apache server, show some info.
+- (Optional) Make the jar in the project a daemon. Open your browser on http://localhost:8080
+
 
 
 ```Linux is user-friendly, but it's just very selective about who its frieds are.```

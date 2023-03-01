@@ -8,7 +8,7 @@ You will find the syntax in the opened file.
 
 ## sed
 
-sed is used mainly to replace string that match a pattern with another string
+sed is used mainly to replace strings that match a pattern with another string
 
 ### Practice:
 - replace all characters "#" with "$" in the lesson files, then undo the change

@@ -7,6 +7,7 @@
 - a single parent process may have one or many child processes and passes many of its attributes to them at the time of their creation
 - each process is assigned a unique identification number, known as the process identifier (PID), which is used by the kernel to manage and control the process through its lifecycle
 - when a process completes its lifecycle or is terminated, this event is reported back to its parent process, and all the resources provisioned to it are then freed and the PID is removed
+- process info is located at **/proc/$PID**
 
 ```Don't root and drink!```
 
@@ -31,10 +32,13 @@ jobs             # display commands sent to run in background
 fg               # bring last command send to background in foreground
 bg               # resume commands paused with CTRL-Z
 
+ls /proc/$PID    # see all the files of the $PID process
+
 top, htop        # alternatives for process info
 ```
 
 ## Practice
-Start top in background, find its pid and kill it.
+- Start top in background, find its pid and kill it.
+- (Optional) Start the java app. Go to http://localhost:8080. Show some info on this process.
 
 ```Thou shalt not kill -9```
