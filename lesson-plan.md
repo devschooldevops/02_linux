@@ -22,10 +22,13 @@ At the end of the lesson the student should:
 
 ## Resources required/used
 - Red Hat Linux (CentOS 7 DVD)
+- mostly based on: https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i?section=outline
+- it will help if you also go through: https://www.tutorialspoint.com/unix/index.htm or some other tutorial
 
 ## Prerequisites
 - have a Red Hat machine setup (Azure VM, Local VM, Local OS)
 - do some updates, check 3_managing_software.md
+- maybe have some ssh client on your local machine to connect to the vm in the ssh chapter (WSL, Putty, some other)
 - be curious :))
 
 ## Agenda
@@ -35,7 +38,6 @@ At the end of the lesson the student should:
 - 15 min: services
 - 15 min: processes
 - 15 min: logging
-- (might move this) 30 min: linux file systems
 - 10 min: ssh
 - 10 min: archives
 - 10 min: other

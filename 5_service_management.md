@@ -77,6 +77,8 @@ systemctl get-default               # get default target
 ## Practice
 - Show some info in sshd.
 - Disable firewalld.service, show info on it.
+- Make the jar in the project a daemon. Open your browser on http://localhost:8080
 - (Optional) Install and start apache server, show some info.
+
 
 ```Linux is user-friendly, but it's just very selective about who its frieds are.```

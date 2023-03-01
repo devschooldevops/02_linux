@@ -95,6 +95,10 @@ A **soft link** (a.k.a. a symbolic link or a symlink) associates one file with a
 
 A **hard link** associates one or more files with a single inode number, making all files indistinguishable from one another. This implies that the files will have identical permissions, ownership, time stamp, and file contents. Changes made to any of the files will be reflected in the other linked files as well.
 
+## Absolute vs relative paths
+An **absolute path** starts from the root of the file system. <br/>
+A **relative path** starts from the current working directory. You can print the cwd with the **pwd** command.
+
 ## Useful commands
 ```bash
 chmod u=x file          # set only execute rights to file for the user (owner)
@@ -143,13 +147,11 @@ find / -type f -size +10M -exec ls -lh {} \;
 ```
 
 ### Practice
-- create a file under your user. (644 <=> rw-r--r--)
+- create a file under your user. (664 <=> rw-rw-r--)
 - test write permissions with other users not from the same group as the owner (it should not work)
 - change permissions to (? <=> rwxrw-r--)
 - test again with someone from the same group.
-
 - create two links on the file (hard and soft), print differences.
-
 - find all files with .so extension.
 
 ```To err is human ... to really f*ck up requires the root password.```
