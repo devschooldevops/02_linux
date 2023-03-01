@@ -35,12 +35,12 @@ At the end of the lesson the student should:
 - be curious :))
 
 ## Agenda
-- 30 min: intro + users
-- 30 min: file management
+- 25 min: intro + users
+- 25 min: file management
 - 15 min: yum + rpm
-- 15 min: services
 - 15 min: processes
-- 15 min: logging
+- 15 min: services
+- 10 min: logging
 - 10 min: ssh
 - 10 min: archives
 - 10 min: other
