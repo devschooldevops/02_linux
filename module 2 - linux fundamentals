@@ -1,0 +1,199 @@
+Every time you run a command, you have the option and you have an argument.
+Syntax: command option(s) argument(s)
+
+Options:
+  - modify the way the command works. Usually consist of "-" followed by letter(s)
+Arguments:
+  - most commands are used together with one or more arguments
+
+Let's take example the "ls" command
+ls = command
+ls -l = command plus option (-l is the option)
+ls -l <file> = command plus option plus argument (<file> is the argument>
+Example: ls -l /var/log/syslog
+
+In order to find the options available for a command, you need to execute "man <command>" which will bring the manual with all the options and potential arguments for that command.
+
+
+File Permissions:
+Linux is a multi-user system. Every file and directory in your account can be protected from or made accessible to other users by changing its access permissions.
+Every user has a responsibility for controlling access to their files.
+Permissions for a file or a directory may be restricted by its types.
+There are three types of permissions:
+  - r = read
+  - w = write
+  - x = execute (running a command/app)
+
+Each permission, (read, write, execute) can be controlled at three different levels:
+  - u = user
+  - g = group
+  - o = others (anyone else on the system)
+  - a = all users
+File or directory permission can be displayed by running "ls -l" command. For example: -rwxrwxrwx
+In this example, the first bit shows that it's a file ( the "-"). The next three bit(rwx) shows it has read write and executable permission by the user.
+The second three bits(rwx) are for the group and the third three bits(rwx) are for the other.
+Command to change the permission is "chmod"
+Let's craeate a file: 
+touch /home/catalin/permissions_file
+ls -l /home/catalin/permissions_file
+-rw-rw-r-- 1 catalin catalin 0 Aug 28 19:45 /home/catalin/permissions_file
+In this case, user catalin has read+write (rw-), group catalin has read+write (rw-) and anyone else on the system (every other user) has read only (r--).
+We can also observe that the "x" is missing from the permissions, indicating that this file is not an executable one.
+Now, let's modify this file to remove the write permissions from the group.
+chmod g-w /home/catalin/permissions_file
+Here, the "g" stands from group and the "-w" means remove the write permission
+Let's remove read and write permissions for every user on the system.
+chmod a-w-r /home/catalin/permissions_file
+Now, we cannot even read the file contents, not to mention writing or deleting it.
+cat /home/catalin/permissions_file
+Let's give back the original permissions which were -rw-rw-r-- 
+You can either execute them in sequence:
+  - chmod u+rw /home/catalin/permissions_file
+  - chmod g+rw /home/catalin/permissions_file
+  - chmod o+r /home/catalin/permissions_file
+Or you can set them all in one command:
+  - chmod u+rw,g+rw,o+r /home/catalin/permissions_file
+
+Let's understand the executable bit for a directory. Let's create a new directory:
+cd /home/catalin/
+mkdir dir1
+ls -l
+drwxrwxr-x 2 catalin catalin 4096 Aug 28 20:04 dir1
+Let's remove executable for all the users on the system:
+chmod a-x dir1
+ls -l
+cd dir1 will trigger permission denied
+Let's restore
+chmod a+x dir1
+ls -l
+cd dir1
+
+Aside from this method, which is using letters, we can also modify the permissions using numeric mode:
+The numeric table is the following:
+0 = no permission = ---
+1 = executable = --x
+2 = write = -w-
+4 = read = r--
+
+Let's create a file
+touch numeric_mode
+ls -l
+-rw-rw-r-- 1 catalin catalin    0 Aug 28 20:11 numeric_mode
+Let's say we want to only assing read permissions, which is digit 4, for all the users on the system:
+chmod 444 numeric_mode
+ls -l numeric_mode 
+-r--r--r-- 1 catalin catalin 0 Aug 28 20:11 numeric_mode
+
+Now let's say we want to have read+write for the user, only read for group, and no permission for everyone else:
+chmod 640 numeric_mode
+ls -l numeric_mode 
+-rw-r----- 1 catalin catalin 0 Aug 28 20:11 numeric_mode
+
+
+
+File ownership
+The file ownerships are created on user level and a group level.
+There are two owners of a file or directory, a user (the one who creates the file or directory), and the group on which the user belongs to.
+Every user in Linux belong to a group. This is because you can a set of permissions which apply at group level, so that all the users in the group have the same permission.
+It would be tedious to apply the same permission to each user individually. That's why it's possible to add more users to a group and set the permission at group level.
+Commands:
+  - chown changes the ownership for a file/directory
+  - chgrp changes the group ownership of a file
+One regular user cannot change the ownership of a file owned by another user. The only user that can do that is the root account. root user has all the privileges.
+Let's demonstrate it by creating a file:
+cd /home/catalin
+echo "some text here" > ownership_file
+cat ownership_file
+sudo -i
+whoami
+cd /home/catalin/
+ls -l ownership_file
+chown root ownership_file
+-rw-rw-r-- 1 root catalin 15 Aug 28 20:27 ownership_file
+ls -l ownership_file
+chgrp root ownership_file
+ls -l ownership_file
+-rw-rw-r-- 1 root root 15 Aug 28 20:27 ownership_file
+exit
+
+
+
+HELP Commands:
+There are 3 help commands that helps understand an utility in Linux:
+  - whatis <command>  Example: whatis ls
+  - <command> --help  Example: ls --help
+  - man <command>     Example: man ls
+
+
+Adding text to files:
+  - echo
+  - redirect command by using ">" or ">>" symbols
+  - vi
+Examples using echo:
+echo "this will print something"
+echo "this will print something" > /home/catalin/redirecting_text_to_a_file
+cat /home/catalin/redirecting_text_to_a_file
+echo "this will print something else" > /home/catalin/redirecting_text_to_a_file
+cat /home/catalin/redirecting_text_to_a_file
+echo "this will print something" > /home/catalin/redirecting_text_to_a_file
+cat /home/catalin/redirecting_text_to_a_file
+echo "this will print something else" >> /home/catalin/redirecting_text_to_a_file
+cat /home/catalin/redirecting_text_to_a_file
+
+Example with redirect:
+date
+date > /home/catalin/redirecting_output_to_a_file
+cat /home/catalin/redirecting_output_to_a_file
+
+Example with vi:
+vi /home/catalin/creating_a_file_using_vi
+
+
+
+File maintenance commands
+  - cp = copies one file to another
+  - rm = removed a files
+  - mv = moves a file from one location to another, or it can rename the file
+  - mkdir = creates a directory
+  - rmdir or rm -r  = removes a directory
+  - chown = changes ownership of a file
+  - chgrp = changes group ownership of a file
+
+
+
+File display commands
+  - cat = views the entire content of a file no matter how long it is
+  - less = allows you to view text files one screen at a time. It provides a convenient way to read and navigate through large text files such as log files, configuration files, or documentation
+  - head = will only print the top n(desired) lines from a file
+  - tail = will only print the bottom n(desired) lines from a file
+
+Examples:
+cat /var/log/syslog
+less /var/log/syslog
+head -n5 /var/log/syslog
+tail -n5 /var/log/syslog
+
+
+
+Compress and un-Compress files in Linux
+There are a few different commands that we use to compress and uncompress files.
+But first of all, there is a command that is used commonly in Linux environment and that is called tar.
+Tar takes a bunch of files together, put them in a, let's say a "container" and makes it like one file.
+You can think that when zipping files on Windows, it will add all of them to an compress single file, but tar, will not compress them. It's the gzip command that will compress the tar file and
+reduce it's size afterwards.
+sudo -i
+cd /var/log/
+Let's add all the files and directories into one file (tar)
+tar -cvf all_logs.tar .
+ls -lh all_logs.tar
+Since this file can be very high in size, we can compress it using the following command:
+gzip all_logs.tar
+ls -l
+If we want to uncompress this, we can run the following command:
+gzip -d all_logs.tar.gz
+If we want to untar the file, we can run the following command:
+tar -xvf all_logs.tar
+If we want to tar and compress using a single command we can run the following:
+tar -czvf all_logs.tar.gz .
+To do the reverse: un-compress and untar in a single command we can run the following:
+tar -xzvf all_logs.tar.gz
