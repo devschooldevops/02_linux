@@ -1,0 +1,75 @@
+What is operating system ?
+Operating system (OS) is a computer software that manages computer hardware and additional software resource. It provides common services for computer programs.
+The operating system acts as a middle man or bridge between computer hardware and the user. It provides a user interface and controls the hardware so that software can function.
+
+There are different operating systems:
+ - Desktop Operating System: Microsoft Windows, MacOS, Linux Desktop
+ - Server Operating System: Microsoft Windows Server, Linux server distributions: Ubuntu Server, RedHat Server, Suse Linux server, etc
+ - Mobile Operating System: Andriod, iOS, Windows Mobile
+ - Embeded Operating System: different flavors/distros used in Routers, Smart TVs, Automotives, Home Appliances, etc
+
+
+What is Linux ?
+Linux in simple terms is a free and open source operating system.
+Linux is very popular for its stability, security and flexibility.
+It can be modified and distributed by anyone, which led to many distributions, each one accomodating different needs.
+
+
+History of Linux
+What was before Linux?
+Before Linux, there was an operating system called UNIX (which still exists btw), developed in 1970 at AT&T Bell laboratories by Ken Thompson and Dennis Ritchie. 
+It was a revolutionary operating system for its time, introducing many features which became standards. This OS wasn't free.
+Later on, in 1983, Richard Stallman launched the GNU project (GNU it's not UNIX project) with it aim of creating a free UNIX-like operating system. While many tools and utilities were developed
+under the GNU project, a complete free OS was missing a kernel.
+Then, in 1991, the Linux was born. A 21 year old Finnish student, Linus Torwalds, started developing a free operating system kernel as a hobby project. It was a combination of the kernel and some 
+utilities from GNU project, hence the Linux operating system.
+Developers from different parts of the world started to collaborate creating new distros of Linux, like Slackware and Debian.
+In the year 2000, Linux saw significat adoption use in several markets. It became the OS of choice for various emeging markets like embeded systems and computers.
+In 2007 Google released Android OS Linux for mobile devices. This gaved Linux enormous boost in the mobile market.
+Nowadays, Linux has grown from a hobbyist project into a powerful force in computing, powering everything from mobile devices, personal computers and servers, to supercomputers.
+The principles of open source on which Linux is based, have also influenced the development of various other software projects.
+So simply put, the story of Linux isn't about a computer system. It's about great people from all over the world working together and making this a reliable, secure, and open source  operating system.
+Many thanks to them :)
+
+
+Linux Flavors
+When people refer to Linux flavors, they typically mean Linux distributions or Distros for short.
+We have all these different distributions to serve various user needs and preferences.
+Among most popular we'll mention these:
+ - Ubuntu, one of the most popular distributions. It is based on Debian, it provides a user-friendly experience, and is backed by Canonical LTD
+ - Fedora, sponsored by Red Hat, it is known for its cutting-edge features and innovations.
+ - Debian, a community-driven project known for its stability, provides the foundation for many other distributions, including Ubuntu.
+ - RedHat Enterprise Linux, a commonly backed distribution from Red Hat designed for businesses and enterprises. 
+ - CentOS, originally free and open-source clone of RHEL, designed to provide a similar experience without the associated costs. Meanwhile, its direction changed with the introduction of CentOS Stream.
+ - openSUSE, it comes in two main flavors: Tumbleweed, (the rolling release) and  Leap, which is a regular release sponsored by SUSE Linux.
+ - Alpine Linux, a lightweight distribution designed for security, simplicity and resource efficiency, making it popular for containerized applications.
+ - Kali Linux, a distribution designed for digital forensics and penetration testing.
+
+Each distribution has its unique features, strengths, target audience, and philosophy. The right distribution for a user, typically depends on their needs, preferences, and intended use case.
+
+
+Linux vs Windows
+ - Availability of source code:
+     Linux: open source
+     Windows: propietary software
+ - Cost:
+     Linux: free
+     Windows: $$
+ - User Interface:
+     Linux: different desktop environments like GNome, KDE, XFCE and others. Users can even customize them. 
+     Windows: Standard GUI
+ - Command line interface:
+     Linux: Console is the very core of Linux
+     Windows: Command Prompt and Powershell
+- Software installation and Package Managers:
+    Linux: Software is generally installed using package managers like APT or YUM, but also manually.
+    Windows: Software is mostly installed using standalone executable like .exe files. Nowadays Microsoft Store exists as well.
+- Security:
+    Linux: Linux is generally considered the most secure
+    Windows: Less secure, more likely to become target of malware attacks
+- Stability and Performance
+    Linux: known for its stability and performance. It can efficiently run on new and older hardware. It is mostly used in servers and systems with a long uptime rating (years of uptime).
+    Windows: generally stable, but tends to slow down after some time due to registry bloat, fragmentation and other issues like background processes and updates that keeps increasing.  
+- File system:
+    Linux: Primary file systems are ext4, XFS, ZFS and btrfs. It considers everything as a file including all the hardware devices. Its directory structure is hierarchical, beginning from the /
+    Windows: The primary file system in use by windows are NTFS and Fat32. It uses drive letters and separate the file system from the user data into different directories.
