@@ -1,0 +1,79 @@
+Show date and time
+  - date
+
+Display system's uptime:
+  - uptime
+
+Display who is currently logged in to the machine
+  - who
+
+Display effective username:
+  - whoami
+
+Show kernel info
+  - uname -a 
+
+Show manual for ls
+  - man ls
+
+Generate random data to fill 5GB of disk usage
+  - fallocate -l 5G /home/<username>/big_file
+
+Display free disk space for partitions:
+  - df -h
+
+Remove file from system:
+  - rm <filename>
+
+Show directory size on disk
+  - du -sh /path/to/directory
+
+Logout from current session:
+  - exit
+
+Print working directory
+  - pwd
+
+Navigate from current directory to the parrent one:
+  - cd ..
+
+Create a hidden file:
+  - touch .hidden file
+
+See a hiden file
+  - ls -la
+
+Copy a file
+  - cp <source> <destination>
+
+Move a file
+  - mv <source> <destination>
+
+Show content of a file
+  - cat <filename>
+  - more <filename>
+  - less <filename>
+  - head <filename>
+  - tail <filename>
+
+Commands history
+  - history
+
+
+Connect remotely to a machine
+  - ssh username@hostname
+
+Search for applications using package managers:
+  - apt search <package_name>
+
+Install an application using package manager:
+  - apt install <packages_name>
+
+View the machine hostname
+  - hostname
+
+Check network interface ip
+  - ifconfig / ip
+
+Clear the terminal screen
+  - clear
