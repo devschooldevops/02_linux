@@ -1,0 +1,137 @@
+Important things before we jump further
+
+Linux has an administrator account called root.
+Root is the most powerful account that can create, modify, delete accounts, and make changes to system configuration files.
+Linux is a case-sensitive system, meaning a file or directory that is created with uppercase "ABC" is not the same as lowercase "abc".
+Avoid using spaces when creating files and directories. Instead, you could use hyphens or underlines.
+Linux kernel is not an operating system. It is a small software within Linux operating system that takes commands from users, and pass them through the system hardware and peripherals.
+Linux is mostly CLI even though GUI is available as well. CLI stands for Command-Line Interface, and GUI stand for Graphical User Interface.
+When you are using Windows operating system, you will see everything is in a GUI. You use your mouse, you drag and drop, but in the Linux, most of the corporate environment, you'll see nothing 
+like that. You'll be given a prompt where you would have to run the command using your keyboard only.
+
+Access to Linux system
+ - Through the console (direct access to an operating system when it is connected through VGA cable, HDMI, DVI, or any other console or display cable)
+ - Through remote software (allows you to connect to your operating system remotely, over the network, using remote connection software like putty or ssh client)
+
+
+Introduction to Filesystem
+Filesystem is a system used by a computer OS to manage your files and directories. The system controls how data is saved or retrieved from your computer storage device.
+As a comparison you can think to a wardrobe closet. You can organize shirts on one shelf, jeans on another, so on and so forth. It would be difficult to find something when needed, 
+if you were trowing all the clothes in the same shelf.
+So operating system stores file and directories in an organized and structured way.
+There are many different types of file systems. Improvements have been made with new releases and each new file system has been given a different name. 
+Examples: ext3, ext4, xfs
+Just like in Windows, everything starts from C:/ ,  in Linux, everything starts from slash /. For example /var/log/messages which is the O.S. log file in Ubuntu.
+
+File system Structure and description:
+/boot = is a directory that contains files used for boot loader. Every time the system starts up, the first thing the OS needs is inside /boot
+/root = is the root user home directory 
+/dev = is a system device such as a disk or flash drive, CD-ROM, speakers, keyboard, any of those peripheral devices that are attached to your Linux computer.
+/etc = one of the most important directory. It has all the configuration files both for the OS and for installed applications.
+/bin or /usr/bin = directory that contains all the essential CLI binaries, necessary for the system to function, and for users to interact with the system, like ls, cp, mv
+/sbin or /usr/sbin = directory that contains binaries that are primarily used by the system administrator (root user) for maintenance and configuration, like fsck, ifconfig, and shutdown.
+/opt = directory used for optional third-party software packages, which are installed manually, not with the package manager, for keeping installations separate from the base system files.
+/proc = virtual filesystem directory that provides an interface to kernel and process information. Here we will see all the running processes listed as files, created by the kernel.
+/lib or /usr/lib = directory used to store essential shared libraries like C programming library files, that are required for the basic function of the system and its applications.
+/tmp = directory that is used for writing temporary files
+/home = directory used for regular users. Example /home/catalin. It's where files owned by regular user will be located.
+/var = directory used for storing variable data which changes frequently. This includes files that are written to and modified during the system’s operation, like Log files.
+/run = directory where daemons starts, like systemd which is the service manager that handles various aspects of system initialization, service management, system state or process IDs files
+/mount or /mnt = directory used to mount external file systems like USB dongles, external drives or network drives
+
+Navigating to file system:
+- cd = change directory
+- pwd = print working directory
+- ls = list
+
+File/Directory properties
+Each file or directory in Linux has detailed information, or, in operating system language, properties. It contains information like its type (file or directory), where is located, the size, 
+who created it and when, sharing capability, security information, etc.
+This information may be seen using "ls -l"
+
+Linux file types:
+- = regular file. Example: a file containg text.
+d = directory Example: just like a folder in Windows
+l = link Example: a symlink pointing to another file. In windows is called shortcut
+c = special or device file. It represents a device that performs data input/output in a character-by-character manner. Examples include terminals.
+s = socket. It's a special file used for inter-process communication. It allows processes to communicate with each other over the network, or within the same system. 
+b = block device. A block device file represents a device that performs data input output in blocks. Examples include hard drives and USB drives
+
+
+Changing password
+passwd = command used to change the password for a username
+
+
+File system paths
+There are two paths to navigate a file system. The first one is the absolute path and the second one is the relative path.
+An absolute path always begins with "/". Example: cd /var/log
+A relative path does not begin with "/" Example: Once we already are inside the /var we can just execute "cd log" instead of the absolute "cd /var/log"
+
+
+Create files and directories
+1. Creating files:
+- touch <file> = creates a new file
+- cp <source> <destination> = you can copy one file from one destination to another, hence creates a file
+- vi/nano <file> = this one creates a new file using a text editor like vi or nano
+
+2. Creating directories:
+- mkdir
+
+
+Copying directories "problem"
+- cp -R <source> <destination>
+
+
+Deleting files:
+- rm <filename>
+
+Deleting directories
+- rmdir <directory> = removes empty directory
+- rm -r <directory> = removes non-empty directory
+
+Find files and directories
+- find <location> -name <file> 
+
+Wildcards
+in Linux, we use wildcards to get the output that we are looking for. A wildcard is a character, that can be used to substitute any character/charectrs.
+* - represents zero or more characters
+? - represents a single character
+
+Soft Links and Hard Links
+First we need to understand what an "inode" is. inode is basically a pointer of a file on a drive.
+Computers understand numbers instead of names. Every time we create a file, computer assigns a number to that file on the drive and associate that number to it. That number is called inode.
+Every time we try to retrieve or read that file, it goes and retrieve that number instead.
+Now, the soft and hard links are shortcuts pointing to some files location.
+A hard link is a direct reference (a pointer) to the data on the drive inode.
+A soft link is a pointer to the name of another file.
+Hard links directly reference the data, while soft links reference the file name.
+
+ln -s <original_file> <soft_link> = creates soft (symlink)
+ln <original_file> <soft_link> = creates a hard link
+
+Example:
+1) Soft link:
+echo "this is an awesome file" > /home/catalin/awesome_file
+cat /home/catalin/awesome_file
+cd /tmp
+ln -s /home/catalin/awesome_file soft_link
+cat /tmp/soft_link
+ls -i /home/catalin/awesome_file
+ls -i /tmp/soft_link
+We can observe a different inode number. 
+rm /home/catalin/awesome_file
+ll /tmp/soft_link
+We can observe the broken link.
+
+2) Hard link:
+echo "this is an even more awesome file" > /home/catalin/more_awesome_file
+cat /home/catalin/more_awesome_file
+cd /tmp
+ln /home/catalin/more_awesome_file hard_link
+cat /tmp/hard_link
+ls -i /home/catalin/more_awesome_file
+ls -i /tmp/hard_link 
+We can observe the same inode number.
+rm /home/catalin/more_awesome_file
+cat  /tmp/hard_link
+We can observe the data is still present in the file, because of the inode.
